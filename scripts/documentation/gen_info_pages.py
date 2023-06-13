@@ -15,6 +15,13 @@ context_info = KiaraContextInfo.create_from_kiara_instance(
     kiara=kiara, package_filter=pkg_name
 )
 
+all_info = context_info.get_all_info(skip_empty_types=True)
+summary = []
+for item_type, items_info in all_info.items():
+    summary.append(f"* [{item_type}]({item_type}.md)")
+    data = items_info.as_dict_with_schema()["data"]["item_infos"]
+    # print(item_type, {d: data[d]["documentation"]["description"] for d in data.keys()})
+
 generate_detail_pages(context_info=context_info)
 
 builtins.plugin_package_context_info = context_info

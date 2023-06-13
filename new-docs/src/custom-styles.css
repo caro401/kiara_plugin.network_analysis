@@ -1,0 +1,8 @@
+:root {
+    --sl-hue-blue: 173;
+    --sl-hue-accent:173;
+    --sl-font: 'Jost';
+}
+a {
+    color: var(--sl-color-text-accent)
+}

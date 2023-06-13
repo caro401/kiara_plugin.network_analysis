@@ -1,0 +1,38 @@
+---
+// TODO get this data from KIARA at build time
+const data = {
+    'data_types': {'network_data': 'Data that can be assembled into a graph.'},
+    'module_types': {
+        'network_data.filters': '-- n/a --',
+        'export.network_data': 'Export network data items.',
+        'network_data.extract_components': 'Extract the largest connected component from this network data.',
+        'network_data.extract_cut_points': 'Create a list of nodes that are cut-points.',
+        'create.network_data': '-- n/a --',
+        'assemble.network_data': "Create a 'network_data' instance from one or two tables."
+    }, 'kiara_model_types': {
+        'network_graph_properties': 'Network data stats.',
+        'instance.network_data': 'A helper class to access and query network datasets.',
+        'metadata.network_node_attribute': '-- n/a --',
+        'metadata.network_edge_attribute': '-- n/a --'
+    }, 'operations': {
+        'assemble.network_data': "Create a 'network_data' instance from one or two tables.",
+        'create.network_data.from.file': 'Create a table from a file, trying to auto-determine the format of said file.',
+        'export.network_data.as.adjlist_file': 'Export network data as adjacency list file.',
+        'export.network_data.as.edgelist_file': 'Export network data as edgelist file.',
+        'export.network_data.as.gexf_file': 'Export network data as gexf file.',
+        'export.network_data.as.graphml_file': 'Export network data as graphml file.',
+        'export.network_data.as.multiline_adjlist_file': 'Export network data as multiline adjacency list file.',
+        'export.network_data.as.network_text_file': "Export network data as network text file (with a '.network' extension).",
+        'network_data.extract_components': 'Extract the largest connected component from this network data.',
+        'network_data.extract_cut_points': 'Create a list of nodes that are cut-points.',
+        'network_data_filter.component': 'Retrieve a single sub-component from a network data object.'
+    }
+}
+---
+
+{Object.entries(data).map(([k, v]) => (<h3>{k}</h3>
+<ul>
+   {Object.entries(v).map(([name, doc]) => (
+         <li><code>{name}</code>: {doc}</li>
+    ))}
+</ul>))}
